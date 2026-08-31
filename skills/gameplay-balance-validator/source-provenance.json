@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "skill": "gameplay-balance-validator",
+  "retrieved_on": "2026-08-31",
+  "upstream_repository": "https://github.com/abagames/agentic-gamedev-skills",
+  "upstream_ref": "9ad6a310c66f707405f23f5771e8b4bd139c7e62",
+  "upstream_license": "MIT",
+  "upstream_copyright": "Copyright (c) 2026 abagames",
+  "source_hash_encoding": "SHA-256 of exact UTF-8 file content returned by GitHub at the pinned ref",
+  "source_files": [
+    {
+      "path": "LICENSE",
+      "url": "https://github.com/abagames/agentic-gamedev-skills/blob/9ad6a310c66f707405f23f5771e8b4bd139c7e62/LICENSE",
+      "git_blob_sha": "0cb34e3f6a4fbc564d578beb485d104c2f3aa8ef",
+      "sha256": "141037de19d4de87073c3b70f31ab37572b39a94862cba5d0149bbc3d45b9323",
+      "adapted_into": [
+        "LICENSE"
+      ],
+      "handling": "copied without modification"
+    },
+    {
+      "path": ".agents/skills/evaluating-gameplay-balance/SKILL.md",
+      "url": "https://github.com/abagames/agentic-gamedev-skills/blob/9ad6a310c66f707405f23f5771e8b4bd139c7e62/.agents/skills/evaluating-gameplay-balance/SKILL.md",
+      "git_blob_sha": "c4d00c23663978a8bc48222d358aa78cbe283a8c",
+      "sha256": "5ea9fcc58ee83b4aab07a4d16aa06b735721273c4c3a7c0b23c309c1cf1ac84f",
+      "adapted_into": [
+        "SKILL.md",
+        "references/balance-workflow.md"
+      ],
+      "handling": "adapted and condensed"
+    },
+    {
+      "path": ".agents/skills/implementing-gameplay-invariants/SKILL.md",
+      "url": "https://github.com/abagames/agentic-gamedev-skills/blob/9ad6a310c66f707405f23f5771e8b4bd139c7e62/.agents/skills/implementing-gameplay-invariants/SKILL.md",
+      "git_blob_sha": "abd6c668a6bdcc8ae44db42419fc18249bcbf791",
+      "sha256": "57b5aa8c46b6b40ce350346d466964c1004489c2da29e3bc78213c4e939cc19a",
+      "adapted_into": [
+        "SKILL.md",
+        "references/invariants-workflow.md"
+      ],
+      "handling": "adapted and condensed"
+    },
+    {
+      "path": ".agents/skills/evaluating-gameplay-balance/references/simulation-harness.md",
+      "url": "https://github.com/abagames/agentic-gamedev-skills/blob/9ad6a310c66f707405f23f5771e8b4bd139c7e62/.agents/skills/evaluating-gameplay-balance/references/simulation-harness.md",
+      "git_blob_sha": "df43d442675a1a36bbd42aac7353eacef2c67ad8",
+      "sha256": "bd2fe9c1325386ab8b890e799e433d33ced64b96d5876579cf0f70c884227f13",
+      "adapted_into": [
+        "references/balance-workflow.md"
+      ],
+      "handling": "adapted and condensed"
+    },
+    {
+      "path": ".agents/skills/implementing-gameplay-invariants/references/invariant-patterns.md",
+      "url": "https://github.com/abagames/agentic-gamedev-skills/blob/9ad6a310c66f707405f23f5771e8b4bd139c7e62/.agents/skills/implementing-gameplay-invariants/references/invariant-patterns.md",
+      "git_blob_sha": "b1c2520e68c4af99caa0dd200bb3fc471d2d7b26",
+      "sha256": "59814738b69d50dffcf6f5a258d3d99d89c0ab06babb216356c84252a0a122b8",
+      "adapted_into": [
+        "references/invariants-workflow.md"
+      ],
+      "handling": "adapted and condensed"
+    }
+  ],
+  "adaptation_notes": [
+    "Merged two upstream experts into one entry point and two selectively loaded workflows.",
+    "Rewrote and condensed instructions; did not bundle upstream companion Skills or execution tools.",
+    "Limited anti-idle, anti-spam, and score caps to explicitly intended game rules.",
+    "Removed universal repair-attempt limits, selection-funnel rules, and rigid always-visible gauge requirement.",
+    "Replaced small-sample min-max significance implications with appropriately qualified experiment guidance.",
+    "Added original standard-library telemetry checker and schema, not an upstream simulator or schema."
+  ],
+  "integration_files": [
+    {
+      "path": "agents/openai.yaml",
+      "sha256": "3b2cdf813477bee3e755b3a588527bcc01c84e1a6248defce5f42ac99a6be48d"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "141037de19d4de87073c3b70f31ab37572b39a94862cba5d0149bbc3d45b9323"
+    },
+    {
+      "path": "NOTICE.md",
+      "sha256": "3055e4932b682e231963fc4eb047b662f694d790a73e9c22233ecb9563cef5dd"
+    },
+    {
+      "path": "references/balance-workflow.md",
+      "sha256": "9b9337ef81510182e4a01ce65ba2616c96a3e2e1442f056b533391f42a089912"
+    },
+    {
+      "path": "references/invariants-workflow.md",
+      "sha256": "91d2a12bd0b9fda0ddfd065693f2a526d91b4cbdf42449a19297ec15a9f4af21"
+    },
+    {
+      "path": "references/telemetry.md",
+      "sha256": "1406b6857d0b7ff570b4e5e0e3a1f0b95e4cd3f18d73593a49e8e1ca951eb535"
+    },
+    {
+      "path": "scripts/validate_telemetry.py",
+      "sha256": "cf87dc09d02da892802162880fd5764984e45b87e2ba69d9a503a0a3fd80f36b"
+    },
+    {
+      "path": "SKILL.md",
+      "sha256": "de571f2eb2075df90e215a7a14ca88221552e2c66689f2669a37679951a39c4e"
+    }
+  ],
+  "validation": {
+    "helper_unit_tests": "12 unittest cases passed, including CLI exit statuses",
+    "test_location": "tests/test_balance.py at repository root; not part of installed Skill",
+    "limitations": [
+      "No game was executed by this checker test.",
+      "No simulator/browser adapter or statistical significance calculation is bundled."
+    ]
+  }
+}
