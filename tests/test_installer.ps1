@@ -33,7 +33,7 @@ if (-not (Test-Path -LiteralPath $windowsPowerShell -PathType Leaf)) {
 }
 $manifest = Get-Content -LiteralPath (Join-Path $repo 'studio-manifest.json') -Raw | ConvertFrom-Json
 $names = @($manifest.skills)
-if ($names.Count -ne 15) { throw 'This release test expects the full 15-Skill Plus package.' }
+if ($names.Count -ne 21) { throw 'This release test expects the full 21-Skill Plus package.' }
 $script:results = [Collections.Generic.List[object]]::new()
 $script:invocationNumber = 0
 
@@ -177,7 +177,7 @@ function Test-Case([string]$Name, [scriptblock]$Body) {
     }
 }
 
-Test-Case 'all-15-install-conflict-repair-uninstall' {
+Test-Case 'all-skills-install-conflict-repair-uninstall' {
     $project = New-TestDirectory 'lifecycle\project'
     $unrelated = New-TestDirectory 'lifecycle\project\.agents\skills\unrelated-skill'
     $unrelatedFile = Join-Path $unrelated 'keep.txt'
