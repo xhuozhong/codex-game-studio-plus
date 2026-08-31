@@ -1,0 +1,3 @@
+interface:
+  display_name: "Sprite Animation Pipeline"
+  short_description: "Normalize sprite strips, anchors, atlases and previews"
