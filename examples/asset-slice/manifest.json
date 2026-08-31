@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {
+      "id": "hero",
+      "kind": "animation",
+      "path": "hero.svg",
+      "source": "self-authored Codex Game Studio Plus acceptance fixture",
+      "sha256": "6083fdae36b3e2b1b39e109a23ef467b67c92f61461a9816b2b1cd8cce6e9ca2",
+      "license": {
+        "id": "MIT",
+        "reviewed": true,
+        "evidence": "LICENSE"
+      },
+      "status": "processed",
+      "depends_on": [],
+      "evidence": []
+    },
+    {
+      "id": "enemy",
+      "kind": "image",
+      "path": "enemy.svg",
+      "source": "self-authored Codex Game Studio Plus acceptance fixture",
+      "sha256": "1fb44c04b6766512592ccfd8cf09dc7a9fe5b7f755b274cc8b3b0644477a7430",
+      "license": {
+        "id": "MIT",
+        "reviewed": true,
+        "evidence": "LICENSE"
+      },
+      "status": "processed",
+      "depends_on": [],
+      "evidence": []
+    },
+    {
+      "id": "tiles",
+      "kind": "texture",
+      "path": "tiles.svg",
+      "source": "self-authored Codex Game Studio Plus acceptance fixture",
+      "sha256": "69f8b87093449ed006315e2aa34fa8a78545995a6292b2d81fc967097fd7cc97",
+      "license": {
+        "id": "MIT",
+        "reviewed": true,
+        "evidence": "LICENSE"
+      },
+      "status": "processed",
+      "depends_on": [],
+      "evidence": []
+    },
+    {
+      "id": "room",
+      "kind": "map",
+      "path": "room.json",
+      "source": "self-authored Codex Game Studio Plus acceptance fixture",
+      "sha256": "12d335f13315e4e9b6ccda9184674244f0cbff0b0e6476450953660678735576",
+      "license": {
+        "id": "MIT",
+        "reviewed": true,
+        "evidence": "LICENSE"
+      },
+      "status": "processed",
+      "depends_on": [
+        "tiles"
+      ],
+      "evidence": []
+    },
+    {
+      "id": "locales",
+      "kind": "data",
+      "path": "locales.json",
+      "source": "self-authored Codex Game Studio Plus acceptance fixture",
+      "sha256": "e37c8dbfe8ca4ac67fcd298efd1e151dfe30474478aa0bb9c7e2651a76a85026",
+      "license": {
+        "id": "MIT",
+        "reviewed": true,
+        "evidence": "LICENSE"
+      },
+      "status": "processed",
+      "depends_on": [],
+      "evidence": []
+    }
+  ]
+}
