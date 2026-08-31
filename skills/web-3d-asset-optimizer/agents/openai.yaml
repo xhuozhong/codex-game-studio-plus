@@ -1,0 +1,3 @@
+interface:
+  display_name: "Web 3D Asset Optimizer"
+  short_description: "Audit GLB assets, budgets, compression and runtime fit"
