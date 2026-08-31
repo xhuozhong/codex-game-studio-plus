@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "package": "codex-game-studio-plus",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "entrypoint": "game-studio-director",
   "skills": [
     "game-studio-director",
@@ -18,6 +18,12 @@
     "phaser-specialist",
     "gameplay-balance-validator",
     "sprite-animation-pipeline",
-    "web-3d-asset-optimizer"
+    "web-3d-asset-optimizer",
+    "asset-production-director",
+    "game-level-builder",
+    "character-animation-integrator",
+    "game-audio-director",
+    "narrative-localization-engineer",
+    "game-vfx-engineer"
   ]
 }
