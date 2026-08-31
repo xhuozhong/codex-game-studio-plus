@@ -1,35 +1,24 @@
-# 中文推广文案（草稿）
+# X / Twitter 推广文案 — Plus 3.0.0
 
-## 短推文版
+## 短版
 
-我把游戏开发团队拆成了 10 个专家 + 1 个总导演，装进 Codex。🎮
+把一个游戏开发团队拆成 14 个专家 + 1 个总导演。🎮
 
-设计→引擎→UI/UX→手感→多人联机→自动试玩回归→部署。
+Codex Game Studio Plus：设计 → 引擎 → UI/UX → 手感 → 多人联机 → 自动试玩回归 → 经授权部署。
 
-用 $game-studio-director 开工，按需选专家，先做一个能玩的完整循环。
+新增 Phaser、数值验证、精灵动画和网页 3D 资源流程。只需从 `$game-studio-director` 开始。
 
-https://github.com/xhuozhong/codex-game-studio
+https://github.com/xhuozhong/codex-game-studio-plus
 
-## 稍长介绍版
+## 介绍版
 
-一个人做游戏，也可以有清晰的团队分工。🎮
+一个人做游戏，也可以把任务分给清晰的专业角色。
 
-我把游戏开发团队拆成 10 个专家 Skill，再加 1 个总导演，整理成了 Codex Game Studio。
+Codex Game Studio Plus 把工作流组织成「14 个专家 + 1 个总导演」：先读懂你的项目，再按任务选择专家，推进设计、引擎、UI/UX、手感、多人联机与试玩回归。
 
-游戏设计→引擎→玩法→UI/UX→手感→多人联机→自动试玩回归→部署，把每一步交给对应职责的专家指令。
+这次从 1 + 10 升级到 1 + 14，补上 Phaser 专项、玩法数值验证、精灵动画处理和网页 3D 资源检查。Windows 本地安装无需联网下载 Skill；实际生成、测试与部署需要相应工具。
 
-入口只有一个：$game-studio-director。
+目标是每次交付一个能实际试玩、能检查证据的小进展。完整源码、来源与许可说明：
+https://github.com/xhuozhong/codex-game-studio-plus
 
-每个功能安排 1 个主负责人、最多 3 个辅助专家。先完成一个能玩的完整循环，再运行、截图、检查状态、修 Bug、做回归。
-
-11 个 Skill 支持离线复制安装。素材生成、浏览器自动化和部署仍需对应工具与权限，多人联机只在明确需要时启用。
-
-适合独立开发者、Game Jam，以及想认真迭代浏览器游戏的人。
-
-源码与示例：https://github.com/xhuozhong/codex-game-studio
-
-#Codex #GameDev
-
----
-
-发布提示：这些是草稿，尚未代发至 X。仓库链接已填入。当前版本许可尚未统一，不用“MIT 开源”等未经确认的表述。
+注：这是公开源码集合，尚无统一开源许可证；不是 OpenAI 官方产品。
