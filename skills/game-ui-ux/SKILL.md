@@ -1,6 +1,6 @@
 ---
 name: game-ui-ux
-description: Engineer usable game interfaces across desktop, mobile and controller input: responsive layouts, safe areas, keyboard/gamepad/touch navigation, focus states, readable information hierarchy and accessibility.
+description: "Engineer usable game interfaces across desktop, mobile and controller input: responsive layouts, safe areas, keyboard/gamepad/touch navigation, focus states, readable information hierarchy and accessibility."
 ---
 
 # Game UI/UX Engineer
