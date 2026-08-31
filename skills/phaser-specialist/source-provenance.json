@@ -1,0 +1,200 @@
+{
+  "schema_version": 1,
+  "skill": "phaser-specialist",
+  "upstream_repository": "https://github.com/phaserjs/phaser",
+  "upstream_ref": "02d8931b626d9764c133cbb3fbf99966c03c757c",
+  "upstream_package_version": "4.2.1",
+  "retrieved_on": "2026-08-31",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Richard Davey, Phaser Studio Inc.",
+  "license_file": "LICENSE.txt",
+  "hash_algorithm": "SHA-256 of exact file bytes; the provenance file does not hash itself",
+  "adaptation_notes": [
+    "Selected material from seven upstream skills is condensed into four references; the full upstream skill collection is not bundled.",
+    "The skill entrypoint and UI metadata are new integration material, not an official Phaser product or endorsement.",
+    "Added resolved-version gate, no-implicit-migration boundary, explicit lifecycle ownership, loader failure checks, and static tilemap guards.",
+    "Registry example handles both first-key setdata and subsequent changedata-score based on the pinned DataManager implementation.",
+    "Omitted upstream sibling-skill/reference links, blanket migration commands and unmeasured object-count performance thresholds.",
+    "Examples require a host Phaser project and assets; this skill does not include Phaser runtime, a browser driver or a demo game."
+  ],
+  "upstream_files": [
+    {
+      "path": "LICENSE.md",
+      "url": "https://github.com/phaserjs/phaser/blob/02d8931b626d9764c133cbb3fbf99966c03c757c/LICENSE.md",
+      "sha256": "c3a9ba7e38d4ef33dccf5fdd1046655c63df06714f84776118fe406f43db5cf2",
+      "use": "verbatim-license",
+      "modified": false,
+      "redistributed": true,
+      "local_files": [
+        "LICENSE.txt"
+      ]
+    },
+    {
+      "path": "package.json",
+      "url": "https://github.com/phaserjs/phaser/blob/02d8931b626d9764c133cbb3fbf99966c03c757c/package.json",
+      "sha256": "fa59aa5eef07850c4535444cb7bc45d02dcf4a0306ae053fde5d537c447892c1",
+      "use": "version-verification",
+      "modified": false,
+      "redistributed": false,
+      "local_files": [
+        "references/version-and-config.md"
+      ]
+    },
+    {
+      "path": "skills/game-setup-and-config/SKILL.md",
+      "url": "https://github.com/phaserjs/phaser/blob/02d8931b626d9764c133cbb3fbf99966c03c757c/skills/game-setup-and-config/SKILL.md",
+      "sha256": "d93abdb3123d74583a6792081c54a90cd8f0e8d3ddeee476d1e96a401b9f12a9",
+      "use": "adapted",
+      "modified": true,
+      "redistributed": true,
+      "local_files": [
+        "references/version-and-config.md"
+      ]
+    },
+    {
+      "path": "skills/v3-to-v4-migration/SKILL.md",
+      "url": "https://github.com/phaserjs/phaser/blob/02d8931b626d9764c133cbb3fbf99966c03c757c/skills/v3-to-v4-migration/SKILL.md",
+      "sha256": "a7d2e1533ecb06874f54e4b93383e6b2c14f6c1dac13f0a10a0d7fe56b6020c3",
+      "use": "adapted",
+      "modified": true,
+      "redistributed": true,
+      "local_files": [
+        "references/version-and-config.md"
+      ]
+    },
+    {
+      "path": "skills/scenes/SKILL.md",
+      "url": "https://github.com/phaserjs/phaser/blob/02d8931b626d9764c133cbb3fbf99966c03c757c/skills/scenes/SKILL.md",
+      "sha256": "31a07e16634d7b49e33cdb681576e158037d4856d40aaa8f7177d662da47cfa8",
+      "use": "adapted",
+      "modified": true,
+      "redistributed": true,
+      "local_files": [
+        "references/scenes-and-lifecycle.md"
+      ]
+    },
+    {
+      "path": "skills/events-system/SKILL.md",
+      "url": "https://github.com/phaserjs/phaser/blob/02d8931b626d9764c133cbb3fbf99966c03c757c/skills/events-system/SKILL.md",
+      "sha256": "aa6f05286584e1301f37ff1f4e74bf26166c44d294a05a88b055d42083717957",
+      "use": "adapted",
+      "modified": true,
+      "redistributed": true,
+      "local_files": [
+        "references/scenes-and-lifecycle.md"
+      ]
+    },
+    {
+      "path": "skills/loading-assets/SKILL.md",
+      "url": "https://github.com/phaserjs/phaser/blob/02d8931b626d9764c133cbb3fbf99966c03c757c/skills/loading-assets/SKILL.md",
+      "sha256": "2ba246be24e434d3647dd62cd1b51ac70258a57c1963b97a960a80e1aca8b638",
+      "use": "adapted",
+      "modified": true,
+      "redistributed": true,
+      "local_files": [
+        "references/loading-and-errors.md"
+      ]
+    },
+    {
+      "path": "skills/physics-arcade/SKILL.md",
+      "url": "https://github.com/phaserjs/phaser/blob/02d8931b626d9764c133cbb3fbf99966c03c757c/skills/physics-arcade/SKILL.md",
+      "sha256": "ebee7a1c98dd6a05e393d33d9aeacf3ef6d247c9fdca0aeab212c18c22c79de7",
+      "use": "adapted",
+      "modified": true,
+      "redistributed": true,
+      "local_files": [
+        "references/physics-and-tilemaps.md",
+        "references/version-and-config.md"
+      ]
+    },
+    {
+      "path": "skills/tilemaps/SKILL.md",
+      "url": "https://github.com/phaserjs/phaser/blob/02d8931b626d9764c133cbb3fbf99966c03c757c/skills/tilemaps/SKILL.md",
+      "sha256": "c1754852ce72c05987c41e1e122eea8f2888cdf46f719259b252d2fda66073eb",
+      "use": "adapted",
+      "modified": true,
+      "redistributed": true,
+      "local_files": [
+        "references/physics-and-tilemaps.md"
+      ]
+    },
+    {
+      "path": "src/data/DataManager.js",
+      "url": "https://github.com/phaserjs/phaser/blob/02d8931b626d9764c133cbb3fbf99966c03c757c/src/data/DataManager.js",
+      "sha256": "55d9c9f050b8971eb6b49033a849594e97595bf54c86e5c5c030dc2c7d7cf9f8",
+      "use": "api-verification",
+      "modified": false,
+      "redistributed": false,
+      "local_files": [
+        "references/scenes-and-lifecycle.md"
+      ]
+    },
+    {
+      "path": "src/cache/CacheManager.js",
+      "url": "https://github.com/phaserjs/phaser/blob/02d8931b626d9764c133cbb3fbf99966c03c757c/src/cache/CacheManager.js",
+      "sha256": "b848f9946e181a09a5acef43072f421b9da54dcc25cb12f20b14677e62322170",
+      "use": "api-verification",
+      "modified": false,
+      "redistributed": false,
+      "local_files": [
+        "references/physics-and-tilemaps.md"
+      ]
+    },
+    {
+      "path": "src/tilemaps/TilemapFactory.js",
+      "url": "https://github.com/phaserjs/phaser/blob/02d8931b626d9764c133cbb3fbf99966c03c757c/src/tilemaps/TilemapFactory.js",
+      "sha256": "cd9115dc68c3deb2ea79cfc87e58bc1fe69431a3069ecae54298a0161cfc4659",
+      "use": "api-verification",
+      "modified": false,
+      "redistributed": false,
+      "local_files": [
+        "references/physics-and-tilemaps.md"
+      ]
+    }
+  ],
+  "local_files": [
+    {
+      "path": "agents/openai.yaml",
+      "sha256": "a59d8aaac720dc889615b739495939c2a895dca90f9f36b0d7a59277d0817305",
+      "origin": "local-integration",
+      "modified": true
+    },
+    {
+      "path": "LICENSE.txt",
+      "sha256": "c3a9ba7e38d4ef33dccf5fdd1046655c63df06714f84776118fe406f43db5cf2",
+      "origin": "verbatim-upstream-license",
+      "modified": false
+    },
+    {
+      "path": "references/loading-and-errors.md",
+      "sha256": "0e1b4506a9462c59889bde57bd7e875806092373e2575cb687c4d1379f6e53f6",
+      "origin": "adapted-reference",
+      "modified": true
+    },
+    {
+      "path": "references/physics-and-tilemaps.md",
+      "sha256": "198ede4460f381f16d8c2b3cbd1cf20eb0c2ecc55c88dd609a771ba55990cc63",
+      "origin": "adapted-reference",
+      "modified": true
+    },
+    {
+      "path": "references/scenes-and-lifecycle.md",
+      "sha256": "8ccaece9fb624f01fc13e3c53936eefa6f2553cfd78c41e59e705ccabc7031ed",
+      "origin": "adapted-reference",
+      "modified": true
+    },
+    {
+      "path": "references/version-and-config.md",
+      "sha256": "13d161518a0e2dcd6f814e7f057963dae0357543cb3bed2f5eaac703ecfb1188",
+      "origin": "adapted-reference",
+      "modified": true
+    },
+    {
+      "path": "SKILL.md",
+      "sha256": "315c3de2b0042d994570aa8b31f86a30ad286a27179ffdd9aa5da0a8692b1e4a",
+      "origin": "local-integration",
+      "modified": true
+    }
+  ],
+  "validation_scope": "Static source/API review, JavaScript syntax checks, Skill frontmatter/UI parsing and relative-link checks; no Phaser runtime or playable-game validation was performed for this specialist during packaging."
+}
