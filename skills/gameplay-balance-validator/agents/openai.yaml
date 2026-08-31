@@ -1,0 +1,3 @@
+interface:
+  display_name: "Gameplay Balance Validator"
+  short_description: "Validate rules and compare play using real telemetry"
