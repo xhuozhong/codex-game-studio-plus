@@ -1,142 +1,122 @@
-# Codex Game Studio 🎮
+# Codex Game Studio Plus
 
-**把一个游戏开发团队拆成 10 个专家 + 1 个总导演。**
+**1 个总导演 + 14 个专家，为浏览器游戏开发组织一套可复用的 Codex 工作流。**
 
-面向浏览器游戏的 Codex Skill 集合：用一个入口安排游戏设计、引擎、玩法、UI/UX、手感、素材、多人联机与试玩回归，让每次开发都有明确的职责和验收路径。
+从游戏设计 → 引擎与玩法 → UI/UX → 手感 → 资源处理 → 多人联机 → 自动试玩回归 → 经授权部署。
 
-```text
-$game-studio-director
+这是 [codex-game-studio](https://github.com/xhuozhong/codex-game-studio) 的独立升级仓库，版本 **3.0.0**。原版保持 1 + 10；Plus 新增 4 位专家、来源记录和可运行的资源/遥测辅助工具。无需逐个召唤专家，总导演按当前任务选择 **1 位主专家 + 通常最多 3 位辅助专家**。
 
-接管当前游戏项目，先检查现有架构与运行方式。
-完成下一项最重要的玩家可见功能，实际试玩、检查截图与状态，
-修复问题后重新回归，并报告真实结果。
-```
+> Skill 是给 Codex 的工作指令与资源，不是十四个后台常驻进程。安装包不附带游戏引擎、浏览器自动化运行时、图片/音频生成服务或云部署账号。是否能执行相关工作取决于当前项目和可用工具。**本集合尚无统一开源许可证**，请先阅读 [NOTICE](NOTICE.md)。
 
-> **当前版本：2.0.0-source.1（源码整理版）。** 已取得并核验原始 `codex-game-studio-2.0.0-offline.zip`；11 个 Skill 正文与原包逐字节一致。仓库改进了安装/备份/卸载脚本、UI 元数据与文档，因此整仓不等同于原 ZIP。来源与许可状态见 [NOTICE](NOTICE.md)。
+## Plus 增加了什么
 
-## 团队：1 个总导演 + 10 个专家
-
-| Skill | 岗位 | 负责什么 |
+| 新专家 | 补上的能力 | 实现边界 |
 | --- | --- | --- |
-| [game-studio-director](skills/game-studio-director/SKILL.md) | 总导演 / 技术负责人 | 读项目、拆任务、安排专家、控制范围、整合验收 |
-| [higgsfield-game-generation](skills/higgsfield-game-generation/SKILL.md) | 游戏生成与素材 | 原型、Sprite、纹理、3D、音乐和音效；先检查可用生成工具 |
-| [game-engine](skills/game-engine/SKILL.md) | 引擎工程 | 游戏循环、场景、实体、输入、物理、碰撞、渲染与性能 |
-| [multiplayer-game](skills/multiplayer-game/SKILL.md) | 多人联机 | 匹配、房间、服务器权威状态、同步、Tick、连接与重连 |
-| [game-developer](skills/game-developer/SKILL.md) | 玩法程序 | 玩法系统、状态机、AI、数据、存档、功能集成 |
-| [game-ui-design](skills/game-ui-design/SKILL.md) | UI 视觉 | HUD、菜单、按钮、背包、图标、字体和视觉一致性 |
-| [game-design-theory](skills/game-design-theory/SKILL.md) | 游戏策划 | 核心循环、关卡、成长、奖励、难度与玩家动机 |
-| [game-feel](skills/game-feel/SKILL.md) | 手感 | 输入响应、动画节奏、粒子、停顿、镜头与音效反馈 |
-| [game-ui-ux](skills/game-ui-ux/SKILL.md) | 交互与适配 | 响应式、安全区域、键鼠/手柄/触控导航、无障碍 |
-| [threejs-game-ui-designer](skills/threejs-game-ui-designer/SKILL.md) | Three.js 界面 | 3D 游戏 HUD、Overlay、菜单、触控与场景同步 |
-| [develop-web-game](skills/develop-web-game/SKILL.md) | 浏览器 QA | 实际运行、自动试玩、截图、状态与 Console 检查、修复和回归 |
+| `phaser-specialist` | Phaser 场景生命周期、加载错误、物理与地图 | 参考固定版本的官方材料；先识别 Phaser 3/4，不自动迁移 |
+| `gameplay-balance-validator` | 固定种子、可比策略、分数/冷却不变量、遥测验证 | 检查实际事件；不把几次试玩当作“已证明好玩” |
+| `sprite-animation-pipeline` | 透明动画条带拆帧、按透明通道裁剪、底部居中锚点与动画导出 | 附 Python 工具；处理已有图片，运行需 Pillow |
+| `web-3d-asset-optimizer` | GLB 检查、网页资源预算、转换与视觉复核流程 | 附只读检查工具；实际优化需项目已有的 3D 工具 |
 
-每个功能指定 **1 个主负责人 + 最多 3 个辅助专家**。总导演按需采用专家指令，不要求用户逐个点名。这是工作职责组织方式，不是自动启动 11 个独立代理的程序，也不提供并行代理运行器。
+新增来源及固定提交见 [来源清单](docs/source-manifest.json)。Phaser 与数值平衡改编保留原 MIT 许可；精灵和 3D 辅助实现独立编写，分别声明许可。没有整体复制一个庞大的上游插件目录。
+
+## 团队职责
+
+| Skill | 负责什么 |
+| --- | --- |
+| **`game-studio-director`** | 读取项目、选择专家、约束范围、组织验证、汇报真实证据 |
+| `game-design-theory` | 核心循环、关卡、成长、奖励、难度与玩家动机 |
+| `game-engine` | 游戏循环、场景、实体、输入、碰撞、摄像机与性能 |
+| `game-developer` | 玩法逻辑、状态机、AI、数据、存档和系统集成 |
+| `game-ui-design` | HUD、菜单、物品栏、面板、图标、排版和视觉语言 |
+| `game-ui-ux` | 信息层级、响应式布局、触屏/键鼠/手柄与无障碍 |
+| `game-feel` | 操作响应、动画节奏、粒子、命中停顿、镜头和音效反馈 |
+| `threejs-game-ui-designer` | Three.js 游戏的 HUD、覆盖层与触控 UI |
+| `multiplayer-game` | 房间、服务器权威状态、同步、断线重连；仅在明确需要联机时启用 |
+| `higgsfield-game-generation` | 原型及图像/音频资源生成流程；须有相应外部工具 |
+| `develop-web-game` | 实际运行、自动试玩、截图/状态、控制台错误和回归 |
+| `phaser-specialist` | Phaser 专项实现与版本边界 |
+| `gameplay-balance-validator` | 可复现的玩法与数值验证 |
+| `sprite-animation-pipeline` | 从精灵表到可交付的帧与动画资源 |
+| `web-3d-asset-optimizer` | 网页 3D 资源检查与优化流程 |
 
 ## Windows 安装
 
-1. 在仓库点击 **Code → Download ZIP**，下载后完整解压。
-2. 首次安装双击 `INSTALL_WINDOWS.cmd`。
-3. 如提示同名 Skill 已存在，确认需要更新后双击 `REPAIR_WINDOWS.cmd`。
-4. Codex 未显示新 Skill 时，完全退出并重新打开。
+### 首次安装
 
-默认安装位置：
+1. 从 [Releases](https://github.com/xhuozhong/codex-game-studio-plus/releases) 下载 **Source code (zip)**，或在仓库的 Code 菜单选择 Download ZIP。
+2. 完整解压，在包含 `skills/` 和 `scripts/` 的目录中运行 `INSTALL_WINDOWS.cmd`。
+3. 安装成功后，若 Codex 尚未显示新 Skill，完全退出并重新打开 Codex。
 
-```text
-%USERPROFILE%\.agents\skills\
-```
+默认装入用户目录下的 `.agents/skills/`。安装过程只复制本地资源，不下载 GitHub 文件，不需要 Git、GitHub CLI 或管理员权限。系统执行策略仍以你所在环境的管理规则为准。
 
-安装只复制本仓库内的 11 个 Skill：**安装阶段无需联网、Git、GitHub CLI 或 GitHub 授权**。这不意味着 Codex 推理、首次下载、游戏依赖安装或外部素材服务可以离线运行。
+### 从旧版升级
 
-安装器兼容 Windows PowerShell 5.1 / PowerShell 7。启动器仅对本次脚本进程使用 `-ExecutionPolicy Bypass`，不会修改系统执行策略；受组织策略管理的设备应遵守管理员要求。
+Plus 与旧版有 11 个同名 Skill，**不能在同一安装目录中并排存放这 11 个版本**。默认安装遇到任意同名目录会停止，不覆盖文件。确认要切换时运行 `REPAIR_WINDOWS.cmd`：先备份整个旧目录（包含本地修改），再安装 Plus。
 
-也可以在仓库目录使用 PowerShell：
+备份位于同一作用域的 `.agents/skill-backups/codex-game-studio-plus/<时间与随机标识>/`，不会作为 Skill 被扫描。卸载使用 `UNINSTALL_WINDOWS.cmd`，仅把标记属于 Plus 的 Skill 移到备份，不永久删除。遇到无标记或其他包标记会先停止，不擅自移动它们。
+
+**先在独立项目试用**，可避免替换用户级旧版。在解压目录打开 PowerShell：
 
 ```powershell
-# 先检查包的完整性，不写入 Skill 目录
-powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\validate.ps1
-
-# 用户级安装
-powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\install.ps1 -Scope User
-
-# 仅安装到某个现有游戏项目
-powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\install.ps1 -Scope Project -ProjectRoot "D:\Games\MyGame"
-
-# 更新：先备份旧目录，再复制新版
-powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\install.ps1 -Scope User -Force
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\install.ps1 -Scope Project -ProjectRoot 'D:\Games\MyGame'
 ```
 
-### 备份与卸载
+`ProjectRoot` 必须是已存在的游戏项目目录。需要更新时在同一命令末尾加 `-Force`。卸载同一作用域：
 
-- 默认遇到同名 Skill 会停止，且在复制前检查全部冲突。
-- `REPAIR_WINDOWS.cmd` 等同于 `-Force` 更新；旧文件移至 `.agents/skill-backups/codex-game-studio/<时间与随机编号>/`。
-- 备份放在 `skills/` 扫描目录之外，避免旧版也被识别成同名 Skill。
-- `UNINSTALL_WINDOWS.cmd` 仅移走带本安装器标记的 11 个 Skill，不永久删除；其他 Skill 保持不变。
-- 本版之前安装的、没有标记的目录不会被卸载器擅自移走。先检查内容，必要时用本版修复安装再卸载。
-- 手动恢复时先将当前同名目录移出 `skills/`，再把指定备份内的 Skill 文件夹放回原位置。不要同时保留两个可扫描副本。
-- 若安装中断，保留备份目录；安装器会尝试回滚，并输出未恢复内容的位置。
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\uninstall.ps1 -Scope Project -ProjectRoot 'D:\Games\MyGame'
+```
 
-macOS / Linux 可手动将 `skills/` 下的 11 个目录复制到 `~/.agents/skills/`。本版未提供或验证这些平台的自动安装脚本。
+先检查实际加载来源；如果同时存在项目级、用户级或旧 `.codex/skills/` 下的同名 Skill，请按当前 Codex 客户端的来源显示整理，避免误以为调用的是另一版本。安装器不会修改旧 `.codex/skills/` 目录。
+
+macOS/Linux 用户可在确认无同名冲突并自行备份后，将所需的整个 Skill 子目录复制到适用的 `.agents/skills/` 中。本版不附 Unix 安装器，也未做这些平台的安装实测。
 
 ## 在 Codex 中调用
 
-在 **Codex CLI / IDE 扩展**中输入 `/skills` 查看，或用 `$game-studio-director` 显式调用。桌面产品也可通过 Skills 列表选择，具体入口随客户端而异。官方说明：[Build skills](https://learn.chatgpt.com/docs/build-skills)。
+在支持该命令的 Codex 输入界面输入 `/skills`，检查已发现的 Skill；如果当前界面没有该命令，使用其 Skill 选择入口。然后在游戏项目中输入：
 
-在实际游戏项目内开始任务，使用本 README 顶部的提示词即可。只处理某一领域时，也可直接调用 `$game-feel`、`$game-ui-ux` 或 `$develop-web-game`。
+```text
+$game-studio-director
+接管当前游戏项目。先读取项目说明，识别引擎版本、玩法、UI、存档和测试方式。
+列出当前阶段与主要风险，选择一个最有价值、能试玩验证的小功能，完成实现与回归。
+保留现有架构，不增加未要求的多人联机或服务。
+```
 
-更多可复制提示词：[示例调用](examples/prompts.md)。
+也可单独调用专家，例如 `$phaser-specialist`。Skill 没有加载时，先修复安装或说明缺失，不要假装已经执行专家资源。
+
+更多可复制的任务模板见 [examples/prompts.md](examples/prompts.md)。
 
 ## 典型工作流
 
-```text
-检查项目与真实启动命令
-  → 游戏设计：明确玩家目标、输入、奖励和失败情况
-  → 引擎 / 玩法实现：完成一个可玩的最小切片
-  → UI/UX + 手感 + 必要素材
-  → 多人联机（仅在明确要求时启用）
-  → 实际运行 → 自动试玩 → 截图 / 状态 / Console 检查
-  → 修复 → 回归 → 更新项目进度
-  → 部署准备 → 获得授权后部署 → 线上验收
-```
+1. **读项目**：确认引擎、运行命令、已有功能、存档和测试入口。
+2. **定一个可玩的切片**：明确玩家目标、输入、反馈、失败条件与验收标准。
+3. **选专家并实现**：只加载相关资源；保护现有功能，不为使用专家而换引擎。
+4. **处理资源**：需要时生成素材，再拆帧/对齐或检查 3D 资源；保留原文件。
+5. **运行和验证**：真正启动游戏，试玩关键流程，检查截图、状态与错误；数值改动加可复现遥测验证。
+6. **交付与部署**：记录实际测试结果；只有部署工具可用且已获用户授权时才发布，给出真实地址。
 
-部署检查表见 [examples/release-checklist.md](examples/release-checklist.md)。该表补充发布流程，不代表包内自带托管服务或一键部署器。
+适合浏览器游戏原型、Phaser/Three.js 项目迭代、UI 与手感改善、精灵素材交付、网页 3D 资源检查，以及需要明确验收标准的小游戏开发。不默认承诺 Unity/Unreal/Godot 编辑器控制、付费资产生成或一键上线。
 
-验收关注玩家旅程，例如：新游戏 → 移动 → NPC 互动 → 收获 → 背包变化 → 保存退出 → 刷新 → 继续游戏。测试必须报告真实执行结果；工具不可用时明确说明阻断，不能把静态阅读当成试玩通过。
-
-## 适用场景
-
-- 独立开发者、Game Jam、浏览器小游戏原型。
-- 像素经营、剧情冒险、动作游戏等逐步迭代。
-- 已有 Canvas、Three.js 或其他网页游戏的功能开发与修复。
-- UI 统一、手机触控适配、手感改善和存档回归。
-- 明确需要时，设计和实现合作模式、房间与实时同步。
-
-## 能力边界
-
-- Skill 是可复用指令，不附带游戏引擎、浏览器、自动化脚本、Playwright、Higgsfield 账号或 API 密钥。
-- 本版 `develop-web-game` 是本集合的 QA 指令，**不是 OpenAI 官方同名 Skill 的完整副本**，不附带官方浏览器测试脚本。
-- `higgsfield-game-generation` 保留角色名称，不代表官方集成或服务可用；没有生成工具时使用现有资产或占位素材。
-- 多人服务器、云存档、账号、付费服务与公开部署都需要实际环境及相应授权。
-- 不保证自动产出可商业发行的完整游戏；性能、可玩性、安全、内容权利仍需逐项验收。
-- 安装器验证的是文件结构与格式，不是对 Skill 行为质量的证明。
-
-## 仓库结构
+## 目录与验证
 
 ```text
-skills/                     # 11 个 Skill，各含 SKILL.md 和 UI 元数据
-scripts/                    # 本地检查、安装、备份与卸载
-examples/                   # 调用提示词、发布检查表
-docs/                       # 来源清单、验证记录、推广文案
-INSTALL_WINDOWS.cmd
-REPAIR_WINDOWS.cmd
-UNINSTALL_WINDOWS.cmd
-NOTICE.md                   # 来源、商标与许可状态
-VERSION
+skills/                 15 个 Skill，按需含 references、scripts、tests、许可
+scripts/                本地安装、备份卸载、结构验证、诊断
+tests/                  隔离项目的安装回归测试
+examples/               调用模板与发布检查表
+docs/                   来源、升级说明、验证记录与推广文案
+studio-manifest.json    包名、版本、入口与唯一 Skill 清单
+NOTICE.md               许可范围和第三方声明
 ```
 
-## 发布与许可状态
+安装检查不依赖 Python：
 
-本仓库提供可阅读、可下载的源码整理版。原 ZIP 已通过完整性与 SHA-256 核验，原包没有 LICENSE / NOTICE 文件。推荐从 **Code → Download ZIP** 下载当前源码版，以使用改进后的安装器；若 Releases 提供原始 ZIP，它仅作为原版存档。原版卸载器会直接删除同名 Skill，原版备份留在扫描目录内；本仓库已分别改为带标记检查的备份卸载、扫描目录外备份。
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\validate.ps1
+```
 
-当前未授予覆盖所有文件的统一开源许可证，不能将“公开仓库”等同于 MIT / Apache 授权。详见 [NOTICE](NOTICE.md)；待来源与权利确认后再补充适当 LICENSE。
+可选结构检查：`python scripts/validate_bundle.py`。精灵工具另需 Pillow；数值遥测与 GLB 检查工具使用 Python 标准库。辅助工具的输入格式、命令和限制见各 Skill 的说明。验证记录与未执行项目见 [docs/validation.md](docs/validation.md)。
 
-欢迎通过 Issue 反馈复现步骤、预期结果、实际结果和环境信息；请勿提交密钥、个人存档、私人聊天或无权分发的素材。
+## 来源与许可
+
+请阅读 [NOTICE.md](NOTICE.md) 和新增专家子目录中的许可/来源文件。旧版 11 个 Skill 未取得统一许可声明；公开仓库不代表所有内容均可按 MIT 再分发。本仓库不宣称是 OpenAI、Phaser、Higgsfield 或 Three.js 的官方产品。
