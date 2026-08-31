@@ -1,203 +1,110 @@
 {
-  "edition": "2.0.0-source.1",
-  "source": "codex-game-studio-2.0.0-offline.zip, cross-checked with locally installed skills",
-  "original_zip_verified": true,
-  "files": [
+  "edition": "3.0.0",
+  "base_repository": "https://github.com/xhuozhong/codex-game-studio",
+  "base_commit": "f222fffffceba66158a3662376bdcf4c101bd683",
+  "original_zip_sha256": "4c2fbd331da3eed73fb3f6d9c9f83bb9da59d87aaf6448805cca8ed6de17144b",
+  "legacy_files": [
     {
       "path": "skills/game-studio-director/SKILL.md",
-      "body_changed": false,
       "source_sha256": "5c04af5291de2e883b889dc07081f0afb775822666df82239b83f5d32cd52ea4",
-      "repository_sha256": "5c04af5291de2e883b889dc07081f0afb775822666df82239b83f5d32cd52ea4"
+      "repository_sha256": "89990ba900a726c2b4547968834a15a9df9bb38c5db91c8f8c91ef3821fba481",
+      "body_changed": true,
+      "frontmatter_quoted_for_valid_yaml": false
     },
     {
       "path": "skills/higgsfield-game-generation/SKILL.md",
-      "body_changed": false,
       "source_sha256": "a7613fe4e8a1e9a4d30d72876eb476c6554b7a43f268036f4f2d43ebeb57e569",
-      "repository_sha256": "a7613fe4e8a1e9a4d30d72876eb476c6554b7a43f268036f4f2d43ebeb57e569"
+      "repository_sha256": "a7613fe4e8a1e9a4d30d72876eb476c6554b7a43f268036f4f2d43ebeb57e569",
+      "body_changed": false,
+      "frontmatter_quoted_for_valid_yaml": false
     },
     {
       "path": "skills/game-engine/SKILL.md",
-      "body_changed": false,
       "source_sha256": "7c098a5abb8a632af7f11ef72bd0795a228d9245e13d68187edf206b790790ff",
-      "repository_sha256": "7c098a5abb8a632af7f11ef72bd0795a228d9245e13d68187edf206b790790ff"
+      "repository_sha256": "7c098a5abb8a632af7f11ef72bd0795a228d9245e13d68187edf206b790790ff",
+      "body_changed": false,
+      "frontmatter_quoted_for_valid_yaml": false
     },
     {
       "path": "skills/multiplayer-game/SKILL.md",
-      "body_changed": false,
       "source_sha256": "107307201922e263ecd14a45241bb34d77354e5b3fe425fbaf22bb6ef4c0ffb3",
-      "repository_sha256": "107307201922e263ecd14a45241bb34d77354e5b3fe425fbaf22bb6ef4c0ffb3"
+      "repository_sha256": "d72f857ab10180c748cac5c11bf46f30c897901e2f1830288e1a11587db2d5e6",
+      "body_changed": false,
+      "frontmatter_quoted_for_valid_yaml": true
     },
     {
       "path": "skills/game-developer/SKILL.md",
-      "body_changed": false,
       "source_sha256": "a4d416454ace8730ea954b8c96dc4420f51e864cec227b3ea4b4f2d47208b1ca",
-      "repository_sha256": "a4d416454ace8730ea954b8c96dc4420f51e864cec227b3ea4b4f2d47208b1ca"
+      "repository_sha256": "580f4434497f19ac97c3c119243cd81a5ca5bdeaa8d2f487560d706f68f578af",
+      "body_changed": false,
+      "frontmatter_quoted_for_valid_yaml": true
     },
     {
       "path": "skills/game-ui-design/SKILL.md",
-      "body_changed": false,
       "source_sha256": "a358233bde098fd80a6807a5785e2af517813c8ef4d794a4055823440bfb3351",
-      "repository_sha256": "a358233bde098fd80a6807a5785e2af517813c8ef4d794a4055823440bfb3351"
+      "repository_sha256": "a358233bde098fd80a6807a5785e2af517813c8ef4d794a4055823440bfb3351",
+      "body_changed": false,
+      "frontmatter_quoted_for_valid_yaml": false
     },
     {
       "path": "skills/game-design-theory/SKILL.md",
-      "body_changed": false,
       "source_sha256": "e9e52f22c14ce87c12e76a71d7398a6ebdbbfe2c25860d86acc178c6ef552b41",
-      "repository_sha256": "e9e52f22c14ce87c12e76a71d7398a6ebdbbfe2c25860d86acc178c6ef552b41"
+      "repository_sha256": "e9e52f22c14ce87c12e76a71d7398a6ebdbbfe2c25860d86acc178c6ef552b41",
+      "body_changed": false,
+      "frontmatter_quoted_for_valid_yaml": false
     },
     {
       "path": "skills/game-feel/SKILL.md",
-      "body_changed": false,
       "source_sha256": "ceeb3677723c891b81b1d27788baae36edbfd382ce9e42caf4889bf3f47fb1c8",
-      "repository_sha256": "ceeb3677723c891b81b1d27788baae36edbfd382ce9e42caf4889bf3f47fb1c8"
+      "repository_sha256": "ceeb3677723c891b81b1d27788baae36edbfd382ce9e42caf4889bf3f47fb1c8",
+      "body_changed": false,
+      "frontmatter_quoted_for_valid_yaml": false
     },
     {
       "path": "skills/game-ui-ux/SKILL.md",
-      "body_changed": false,
       "source_sha256": "52829c1bf354de5147b190be70a09240b3f2ddf3008a6907cce3d540c1c52697",
-      "repository_sha256": "52829c1bf354de5147b190be70a09240b3f2ddf3008a6907cce3d540c1c52697"
+      "repository_sha256": "c69c00b4c75c50afd32eb55f03bc0a1701cbbf81281173bd87265ca1f3cee7ed",
+      "body_changed": false,
+      "frontmatter_quoted_for_valid_yaml": true
     },
     {
       "path": "skills/threejs-game-ui-designer/SKILL.md",
-      "body_changed": false,
       "source_sha256": "47793ebe8c2a9d9b08a1c485e80074454a5e1f136f3313fe57f3073b722f90c8",
-      "repository_sha256": "47793ebe8c2a9d9b08a1c485e80074454a5e1f136f3313fe57f3073b722f90c8"
+      "repository_sha256": "47793ebe8c2a9d9b08a1c485e80074454a5e1f136f3313fe57f3073b722f90c8",
+      "body_changed": false,
+      "frontmatter_quoted_for_valid_yaml": false
     },
     {
       "path": "skills/develop-web-game/SKILL.md",
-      "body_changed": false,
       "source_sha256": "dd1929cc60f0f9c2412f3146f258addc8735f437d661a8dac1516c36a88bff16",
-      "repository_sha256": "dd1929cc60f0f9c2412f3146f258addc8735f437d661a8dac1516c36a88bff16"
+      "repository_sha256": "dd1929cc60f0f9c2412f3146f258addc8735f437d661a8dac1516c36a88bff16",
+      "body_changed": false,
+      "frontmatter_quoted_for_valid_yaml": false
     }
   ],
-  "line_endings": "GitHub online editor normalizes text to LF; compare source_sha256 for original bytes and repository_sha256 for published bytes.",
-  "original_zip_sha256": "4c2fbd331da3eed73fb3f6d9c9f83bb9da59d87aaf6448805cca8ed6de17144b",
-  "original_zip_crc_valid": true,
-  "original_zip_license_files": [],
-  "original_zip_files": [
+  "additions": [
     {
-      "path": "UNINSTALL_WINDOWS.cmd",
-      "sha256": "86ca71428bf9f2a561f24f14c5c119299ad27981d9aa83850e7cb7a8746944cd"
+      "skill": "phaser-specialist",
+      "repository": "https://github.com/phaserjs/phaser",
+      "commit": "02d8931b626d9764c133cbb3fbf99966c03c757c",
+      "provenance": "skills/phaser-specialist/source-provenance.json",
+      "mode": "focused adaptation; upstream MIT retained"
     },
     {
-      "path": "REPAIR_WINDOWS.cmd",
-      "sha256": "703cacfaba6a972dec26eda50f824db53e36f6ec451ca175160ee68dd9931f20"
+      "skill": "gameplay-balance-validator",
+      "repository": "https://github.com/abagames/agentic-gamedev-skills",
+      "commit": "9ad6a310c66f707405f23f5771e8b4bd139c7e62",
+      "mode": "adaptation of balance evaluation and gameplay invariant workflows; upstream MIT retained"
     },
     {
-      "path": "README.md",
-      "sha256": "be44db4e997bcd9cf1b5bd13c72ca6bad0ffc71e9f61eb110fc23f3d05979e0e"
-    },
-    {
-      "path": "scripts/validate_bundle.py",
-      "sha256": "02e22ea5c98894d3dd2f6705f2990900d7b02682229b7ac64f6c59b7c29f4654"
-    },
-    {
-      "path": "scripts/install.ps1",
-      "sha256": "adbccf24da4100183a5626f269a0fe8cd5f20a248eb65f1b0afc97832e4ff9c4"
-    },
-    {
-      "path": "scripts/uninstall.ps1",
-      "sha256": "96b0bcae80187c8b86039f30b8daa498260053644b2157b819c806e835b5933d"
-    },
-    {
-      "path": "scripts/diagnose.ps1",
-      "sha256": "e150c693aba3dd667bc8260a86aac25292ae1de4559140f149386ace9a2e9977"
-    },
-    {
-      "path": "INSTALL_WINDOWS.cmd",
-      "sha256": "2326789f98d210a9174a627c3f889075ac4095e67040a07056ade18a8920ee21"
-    },
-    {
-      "path": "VERSION",
-      "sha256": "c28fcca53637bc88e124af1725df13cb98c69dedefd62fb3cdbe1cdb6b760624"
-    },
-    {
-      "path": "skills/game-design-theory/SKILL.md",
-      "sha256": "e9e52f22c14ce87c12e76a71d7398a6ebdbbfe2c25860d86acc178c6ef552b41"
-    },
-    {
-      "path": "skills/game-design-theory/agents/openai.yaml",
-      "sha256": "689387e3bffa88f62127bde136bf54be9be612516f379ce5864fe0020bafb53d"
-    },
-    {
-      "path": "skills/develop-web-game/SKILL.md",
-      "sha256": "dd1929cc60f0f9c2412f3146f258addc8735f437d661a8dac1516c36a88bff16"
-    },
-    {
-      "path": "skills/develop-web-game/agents/openai.yaml",
-      "sha256": "ec8e82f3d6ab226f756770db1df26f354314920b005b5704f9b66ce3a8fea683"
-    },
-    {
-      "path": "skills/multiplayer-game/SKILL.md",
-      "sha256": "107307201922e263ecd14a45241bb34d77354e5b3fe425fbaf22bb6ef4c0ffb3"
-    },
-    {
-      "path": "skills/multiplayer-game/agents/openai.yaml",
-      "sha256": "141f35e0aecc3cd0dccdbdd9c220f998376238778fb3206940a647478a373f98"
-    },
-    {
-      "path": "skills/game-ui-ux/SKILL.md",
-      "sha256": "52829c1bf354de5147b190be70a09240b3f2ddf3008a6907cce3d540c1c52697"
-    },
-    {
-      "path": "skills/game-ui-ux/agents/openai.yaml",
-      "sha256": "e3188cce8a239338032e6920a3d8217c72358dca001a444f8debcdc8e1173a51"
-    },
-    {
-      "path": "skills/game-studio-director/SKILL.md",
-      "sha256": "5c04af5291de2e883b889dc07081f0afb775822666df82239b83f5d32cd52ea4"
-    },
-    {
-      "path": "skills/game-studio-director/agents/openai.yaml",
-      "sha256": "35e809526f78181667745a0c5e1eff757f8237164da3dac22101d7760950b119"
-    },
-    {
-      "path": "skills/higgsfield-game-generation/SKILL.md",
-      "sha256": "a7613fe4e8a1e9a4d30d72876eb476c6554b7a43f268036f4f2d43ebeb57e569"
-    },
-    {
-      "path": "skills/higgsfield-game-generation/agents/openai.yaml",
-      "sha256": "12ce8f2595138015022d58184ada3863c6bff0c68c15e621b3052fba2bb157d9"
-    },
-    {
-      "path": "skills/threejs-game-ui-designer/SKILL.md",
-      "sha256": "47793ebe8c2a9d9b08a1c485e80074454a5e1f136f3313fe57f3073b722f90c8"
-    },
-    {
-      "path": "skills/threejs-game-ui-designer/agents/openai.yaml",
-      "sha256": "e5e49682c380ac9de8865eab7ad289cab094e3f7f23c042697acbffafa3b409b"
-    },
-    {
-      "path": "skills/game-ui-design/SKILL.md",
-      "sha256": "a358233bde098fd80a6807a5785e2af517813c8ef4d794a4055823440bfb3351"
-    },
-    {
-      "path": "skills/game-ui-design/agents/openai.yaml",
-      "sha256": "fde8d3d0fe351c4c0d9581d75378228a62015ea9fdbf82e27f00dcf8e91e2ee4"
-    },
-    {
-      "path": "skills/game-feel/SKILL.md",
-      "sha256": "ceeb3677723c891b81b1d27788baae36edbfd382ce9e42caf4889bf3f47fb1c8"
-    },
-    {
-      "path": "skills/game-feel/agents/openai.yaml",
-      "sha256": "3c30613e1b7e33d62592959bfee1ad75d5a11dcbd6bc4de99aaa62c5417c5957"
-    },
-    {
-      "path": "skills/game-engine/SKILL.md",
-      "sha256": "7c098a5abb8a632af7f11ef72bd0795a228d9245e13d68187edf206b790790ff"
-    },
-    {
-      "path": "skills/game-engine/agents/openai.yaml",
-      "sha256": "e8b6583f41d3318a7973c1d6adcba65c27a2d53e00358d0c592185f2c33f34a5"
-    },
-    {
-      "path": "skills/game-developer/SKILL.md",
-      "sha256": "a4d416454ace8730ea954b8c96dc4420f51e864cec227b3ea4b4f2d47208b1ca"
-    },
-    {
-      "path": "skills/game-developer/agents/openai.yaml",
-      "sha256": "9a2c5bc2c3f4ead386f5e6edf96edfb34b6d3a4f6a82ef2d1a15015141831b9d"
+      "skills": [
+        "sprite-animation-pipeline",
+        "web-3d-asset-optimizer"
+      ],
+      "repository": "https://github.com/openai/plugins",
+      "commit": "cd0fccd4ed62dded584c16246685b232d7bfe7f6",
+      "mode": "workflow reference; independently authored local instructions and helper code; no upstream scripts copied"
     }
-  ]
+  ],
+  "license_note": "No blanket license for legacy or entire repository. Inspect each new skill license and source record."
 }
