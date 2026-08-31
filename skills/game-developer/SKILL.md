@@ -1,6 +1,6 @@
 ---
 name: game-developer
-description: Implement gameplay systems and features using professional game-development practices: state machines, gameplay logic, data models, AI, interaction, persistence, integration, debugging and maintainable code.
+description: "Implement gameplay systems and features using professional game-development practices: state machines, gameplay logic, data models, AI, interaction, persistence, integration, debugging and maintainable code."
 ---
 
 # Game Developer
