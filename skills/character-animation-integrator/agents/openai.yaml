@@ -1,0 +1,3 @@
+interface:
+  display_name: "Character Animation Integrator"
+  short_description: "Integrate skeletons, clips and gameplay events"

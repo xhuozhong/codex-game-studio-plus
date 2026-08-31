@@ -33,3 +33,9 @@ Generated assets must:
 ## Acceptance
 
 For each asset batch, verify at least one real in-game scene and report missing external tools separately from implementation results.
+
+## Multi-asset production
+
+When a batch spans characters, environment, UI, animation or sound, use the available `asset-production-director` workflow to record the approved style, original sources, license/weight/output conditions, hashes and handoff requirements. Keep workflow/model/node versions, reference inputs and seeds when generating; do not store service secrets. Use existing licensed assets when sufficient.
+
+ComfyUI, Blender bridges and local 3D models are optional tools, not capabilities installed by this Skill. Check available tools, hardware, privacy defaults and provider terms before selecting them. Treat custom nodes and imported scripts as executable third-party code. A generated mesh needs topology/material checks and a separate rigging step if it must animate; a generated picture is not automatically a usable PBR material.

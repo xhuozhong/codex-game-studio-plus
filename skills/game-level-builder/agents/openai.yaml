@@ -1,0 +1,3 @@
+interface:
+  display_name: "Game Level Builder"
+  short_description: "Import maps and verify playable scene structure"

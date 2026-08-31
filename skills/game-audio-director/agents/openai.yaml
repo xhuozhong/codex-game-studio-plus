@@ -1,0 +1,3 @@
+interface:
+  display_name: "Game Audio Director"
+  short_description: "Implement cues, mixing and reliable game audio"

@@ -1,5 +1,5 @@
 {
-  "edition": "3.0.0",
+  "edition": "4.0.0",
   "base_repository": "https://github.com/xhuozhong/codex-game-studio",
   "base_commit": "f222fffffceba66158a3662376bdcf4c101bd683",
   "original_zip_sha256": "4c2fbd331da3eed73fb3f6d9c9f83bb9da59d87aaf6448805cca8ed6de17144b",
@@ -7,15 +7,15 @@
     {
       "path": "skills/game-studio-director/SKILL.md",
       "source_sha256": "5c04af5291de2e883b889dc07081f0afb775822666df82239b83f5d32cd52ea4",
-      "repository_sha256": "89990ba900a726c2b4547968834a15a9df9bb38c5db91c8f8c91ef3821fba481",
+      "repository_sha256": "961ba2f10e98e886392609f364dd165162ecf8293682a71bda868fccca8d2f7e",
       "body_changed": true,
       "frontmatter_quoted_for_valid_yaml": false
     },
     {
       "path": "skills/higgsfield-game-generation/SKILL.md",
       "source_sha256": "a7613fe4e8a1e9a4d30d72876eb476c6554b7a43f268036f4f2d43ebeb57e569",
-      "repository_sha256": "a7613fe4e8a1e9a4d30d72876eb476c6554b7a43f268036f4f2d43ebeb57e569",
-      "body_changed": false,
+      "repository_sha256": "46eadba096eec9773e7bd17f1e88da7cf3e3d55747aab82b304c1abf8825439c",
+      "body_changed": true,
       "frontmatter_quoted_for_valid_yaml": false
     },
     {
@@ -106,5 +106,31 @@
       "mode": "workflow reference; independently authored local instructions and helper code; no upstream scripts copied"
     }
   ],
-  "license_note": "No blanket license for legacy or entire repository. Inspect each new skill license and source record."
+  "license_note": "No blanket license for legacy or entire repository. Inspect each new skill license and source record.",
+  "v4_independent_material": {
+    "skills": [
+      "asset-production-director",
+      "game-level-builder",
+      "character-animation-integrator",
+      "game-audio-director",
+      "narrative-localization-engineer",
+      "game-vfx-engineer"
+    ],
+    "license": "MIT in each new skill directory",
+    "authorship": "New original instructions and Python helpers; upstream README/code not copied.",
+    "external_tools_bundled": false,
+    "research_date": "2026-08-31",
+    "references": [
+      "https://github.com/Comfy-Org/ComfyUI",
+      "https://github.com/Poly-Haven/Public-API",
+      "https://github.com/mapeditor/tiled",
+      "https://github.com/deepnight/ldtk",
+      "https://github.com/EsotericSoftware/spine-runtimes",
+      "https://github.com/goldfire/howler.js",
+      "https://github.com/inkle/ink",
+      "https://github.com/y-lohse/inkjs",
+      "https://github.com/pmndrs/postprocessing",
+      "https://github.com/donmccurdy/glTF-Transform"
+    ]
+  }
 }

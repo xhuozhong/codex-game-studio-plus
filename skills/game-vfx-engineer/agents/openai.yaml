@@ -1,0 +1,3 @@
+interface:
+  display_name: "Game VFX Engineer"
+  short_description: "Build readable effects and measure render cost"
