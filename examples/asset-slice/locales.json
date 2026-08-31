@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "default_locale": "zh-CN",
+  "locales": {
+    "zh-CN": {
+      "title": "多素材可玩验收",
+      "guide": "接受任务，靠近守卫攻击两次，再到右侧出口。",
+      "start": "开始 / 启用声音",
+      "accept": "接受任务",
+      "attack": "攻击",
+      "save": "保存进度",
+      "load": "读取进度",
+      "reset": "重置关卡",
+      "left": "向左",
+      "right": "向右",
+      "up": "向上",
+      "down": "向下",
+      "win": "关卡完成：素材链已连通",
+      "quest": "清除守卫后前往出口。"
+    },
+    "en": {
+      "title": "Playable asset acceptance",
+      "guide": "Accept the quest, hit the guard twice at close range, then reach the exit.",
+      "start": "Start / enable audio",
+      "accept": "Accept quest",
+      "attack": "Attack",
+      "save": "Save",
+      "load": "Load",
+      "reset": "Reset level",
+      "left": "Left",
+      "right": "Right",
+      "up": "Up",
+      "down": "Down",
+      "win": "Complete: asset flow connected",
+      "quest": "Defeat the guard and reach the exit."
+    }
+  }
+}
