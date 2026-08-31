@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "package": "codex-game-studio-plus",
+  "version": "3.0.0",
+  "entrypoint": "game-studio-director",
+  "skills": [
+    "game-studio-director",
+    "higgsfield-game-generation",
+    "game-engine",
+    "multiplayer-game",
+    "game-developer",
+    "game-ui-design",
+    "game-design-theory",
+    "game-feel",
+    "game-ui-ux",
+    "threejs-game-ui-designer",
+    "develop-web-game",
+    "phaser-specialist",
+    "gameplay-balance-validator",
+    "sprite-animation-pipeline",
+    "web-3d-asset-optimizer"
+  ]
+}
