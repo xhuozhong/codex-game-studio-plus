@@ -1,12 +1,15 @@
-$ErrorActionPreference='Continue'
-Write-Host '=== Codex Game Studio diagnostics ===' -ForegroundColor Cyan
-Write-Host "User HOME : $HOME"
-Write-Host "User skills: $(Join-Path $HOME '.agents\skills')"
-Write-Host "Legacy skills: $(Join-Path $HOME '.codex\skills')"
-foreach($root in @((Join-Path $HOME '.agents\skills'),(Join-Path $HOME '.codex\skills'))){
-  if(Test-Path $root){Write-Host "`n[$root]" -ForegroundColor Yellow; Get-ChildItem $root -Directory | Where-Object Name -match 'game|higgs|rivet|develop' | Select-Object -ExpandProperty Name}
+[CmdletBinding()]
+param()
+. (Join-Path $PSScriptRoot 'common.ps1')
+Write-Output "Package: $StudioPackage $StudioVersion"
+Write-Output "Declared Skills: $($StudioSkills.Count)"
+Write-Output "PowerShell: $($PSVersionTable.PSVersion)"
+$profilePath = [Environment]::GetFolderPath('UserProfile')
+foreach ($relative in @('.agents/skills','.codex/skills')) {
+    $folder = Join-Path $profilePath $relative
+    Write-Output "Checking: $folder"
+    if (Test-Path -LiteralPath $folder -PathType Container) {
+        Get-ChildItem -LiteralPath $folder -Directory | Where-Object { $_.Name -in $StudioSkills } | Select-Object -ExpandProperty Name
+    }
 }
-Write-Host "`nPowerShell: $($PSVersionTable.PSVersion)"
-Write-Host "Python: $(python --version 2>&1)"
-Write-Host "Git: $(git --version 2>&1)"
-Write-Host '=== end ==='
+Write-Output 'Read-only diagnostic. Review personal paths before sharing its output.'
