@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Game Studio Plus · Asset Lab</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#101b26;color:#e6edeb;font:16px/1.6 system-ui,sans-serif}main{max-width:1020px;margin:48px auto;padding:0 24px}.eyebrow{letter-spacing:.18em;color:#75d9bf;font-size:12px}h1{font-size:36px;margin:12px 0}p{color:#b4c5cf}.layout{display:grid;grid-template-columns:1fr 245px;gap:24px}canvas{display:block;width:100%;background:#253d4c;border:1px solid #5b7a83;border-radius:12px;image-rendering:pixelated}.panel{padding:20px;border:1px solid #354857;background:#162532;border-radius:12px}button{border:1px solid #527575;border-radius:6px;background:#254449;color:#f3fffb;padding:10px 14px;font:inherit;cursor:pointer}button:hover{background:#356268}button:focus-visible{outline:3px solid #ffc673;outline-offset:3px}.controls{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}.primary{background:#74d5b7;color:#0c302a}.status{white-space:pre-line;font:13px/1.8 ui-monospace,monospace;color:#aee7d6}small{color:#8ea9b7}#message{min-height:30px;color:#ffd58b}@media(max-width:760px){main{margin:24px auto}.layout{grid-template-columns:1fr}h1{font-size:28px}}
+</style>
+<main><div class="eyebrow">CODEX GAME STUDIO PLUS 4.0 / ASSET LAB</div><h1 data-text="title">多素材可玩验收</h1><p data-text="guide">接受任务，靠近守卫攻击两次，再到右侧出口。</p>
+<div class="layout"><section><canvas id="game" width="640" height="320" aria-label="可移动角色、守卫和出口的测试关卡"></canvas>
+<div class="controls"><button class="primary" id="start" data-text="start">开始 / 启用声音</button><button id="accept" data-text="accept">接受任务</button><button id="attack" data-text="attack">攻击</button></div>
+<div class="controls"><button id="left" data-text="left">向左</button><button id="right" data-text="right">向右</button><button id="up" data-text="up">向上</button><button id="down" data-text="down">向下</button></div>
+<div class="controls"><button id="save" data-text="save">保存进度</button><button id="load" data-text="load">读取进度</button><button id="reset" data-text="reset">重置关卡</button><button id="locale">English / 中文</button></div><div id="message" role="status"></div></section>
+<aside class="panel"><strong>运行证据 / Live state</strong><output id="state" class="status" aria-live="polite"></output><hr><small>SVG 精灵与图块<br>JSON 地图与对白<br>动画事件与粒子<br>WAV / Web Audio<br>存档与语言切换<br><br>原创几何素材，仅用于验证接入流程。</small></aside></div><p id="error" role="alert"></p></main>
+<script src="game.js"></script></html>
