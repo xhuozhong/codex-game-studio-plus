@@ -36,3 +36,13 @@ Compression is a joint asset/runtime decision. Confirm support for every require
 Use [references/runtime-checklist.md](references/runtime-checklist.md) for the acceptance checks and report structure. Run every required clip; inspect silhouettes, normals, alpha edges, materials, pivots and collision alignment. Check transfer, decoder requests, console errors and performance in the real game.
 
 Return the original and candidate sizes/hashes, exact tool versions/commands, changed features, measurements and remaining limitations. If no real renderer test was possible, label the result “prepared, runtime validation pending,” not “production ready.” Fixed upstream attribution is in [references/source.md](references/source.md).
+
+## Executable candidate transformation (Plus 4)
+
+The new [transform helper](scripts/transform_glb.py) calls an **already installed, explicitly supplied** glTF Transform CLI using Node, without shell execution or package installation. Supported operations are `dedup`, `resize` and `meshopt`; it accepts self-contained GLB v2 only, validates the candidate through that CLI, preserves the source and refuses an existing output. It does not measure runtime performance or automatically update game asset URLs.
+
+```text
+python <skill-dir>/scripts/transform_glb.py --input source.glb --output candidate.glb --node <node-executable> --cli-js <installed-cli/bin/cli.js> --operation dedup
+```
+
+Check installed CLI version/help before use; reviewed integration targets glTF Transform 4.4.2 and Node>=20. `resize` accepts `--width`/`--height`; `meshopt` requires a compatible runtime decoder. Test animation, attachments, materials and target runtime after every candidate. Third-party tools remain external dependencies under their own licenses.
