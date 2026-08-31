@@ -1,6 +1,6 @@
 ---
 name: multiplayer-game
-description: Design and implement multiplayer browser-game networking: matchmaking, rooms, authoritative state, realtime synchronization, tick loops, player connections, reconnects and server/client boundaries. Activate only when multiplayer is explicitly required.
+description: "Design and implement multiplayer browser-game networking: matchmaking, rooms, authoritative state, realtime synchronization, tick loops, player connections, reconnects and server/client boundaries. Activate only when multiplayer is explicitly required."
 ---
 
 # Multiplayer Engineer
