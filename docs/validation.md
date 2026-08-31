@@ -1,35 +1,32 @@
-# 3.0.0 验证记录
+# 4.0.0 验证记录
 
-日期：2026-08-31。对象为本仓库交付的 Skill 和辅助工具，不是某个游戏的完整生产验收。
+日期：2026-08-31。对象为交付的 Skill、辅助工具和原创多素材验收样例。历史 3.0 记录见 [validation-v3.md](validation-v3.md)。
 
-## 静态与元数据
+## 已执行
 
-- 15 个 Skill 与 `studio-manifest.json` 清单一致。
-- 使用 Codex skill-creator 的 `quick_validate.py` 和 PyYAML 6.0.3 解析全部 Skill frontmatter；UI YAML 同时解析。
-- 修复了旧版 multiplayer-game、game-developer、game-ui-ux 的 description 未引用冒号问题，含义与指令正文不变。
-- 检查 UTF-8、相对链接、Python 语法、PowerShell 语法、来源哈希和明显凭据/个人路径泄漏。
-- 离线安装校验器只检查本包采用的 frontmatter 子集，不冒充完整 YAML 解析器。
+- 21 个 Skill 与安装清单一致；官方 skill-creator quick_validate 和 PyYAML 6.0.3 完整检查 frontmatter/UI YAML。检查 UTF-8、Python 语法、相对链接、来源哈希和明显秘密/个人路径泄漏。Windows 上官方校验以 UTF-8 模式运行。
+- 新增 production 测试 15 组通过：来源哈希与证据、未审核许可/草稿拒绝发布、路径逃逸/ADS/Windows 路径拒绝、重复记录/缺依赖/体积预算；地图引用/GID/翻转标志/稀疏图片图块/出生点/LDtk 外置层及不支持格式；PCM 样本/循环区间；中英文本与占位符数量。
+- 原数值遥测 12 项测试、精灵/GLB 6 组回归测试通过。Python 3.12.13、Pillow 12.3.0。
+- Windows PowerShell 5.1 安装回归 13 组通过：对完整 21-Skill 包执行隔离项目安装、冲突拒绝、备份更新、卸载、标记保护、非法清单、符号链接/目录联接及长路径预检。未永久删除旧 Skill。
+- 实际 glTF Transform 4.4.2：原创双材质三角形 GLB 的 dedup 与 meshopt 转换成功，验证源文件不变、重复输出拒绝，dedup 后材质数从 2 到 1。测试输入 608 字节，dedup 输出 632 字节，meshopt 输出 1088 字节；这说明小素材不能假定压缩会变小。校验器对 EXT_meshopt_compression 报告不支持的扩展，不能因此宣称完整解码正确。
+- 原创浏览器样例的 JavaScript 语法检查、SVG/地图/中英文资源加载与实际按钮操作。运行中的 DOM 显示移动、任务、命中次数、WAV 解码/AudioContext running、声音调度事件以及保存/重置/读取结果；随后实际到达出口通关，切换英文，查看画面并检查当前浏览器日志，无 error/warn。画面为原创几何素材，不代表最终商业美术。
 
-## 实际行为测试
+## 验证命令
 
-- 数值工具：`python tests/test_balance.py`，12 项 unittest 通过。涵盖确定性配对、重复事件/计分、冷却边界、分母为零或负数、数值溢出、无效遥测、工具失败和退出码。
-- 素材工具：`python tests/test_assets.py --scratch-parent <仓库外现有目录>`，6 组检查通过。使用合成图片检查 4 帧切分、共同缩放、底部居中、透明度、图集、GIF、原件保护和坏输入拒绝；使用合成 GLB 检查结构清单、哈希、损坏文件拒绝及外部 URI 不读取。
-- 测试环境使用 Python 3.12.13、Pillow 12.3.0；用户运行辅助工具的依赖要求见各 Skill。
-- Phaser 参考中的 5 段 JavaScript 通过 Node 语法检查；未启动 Phaser。
-
-Windows 安装测试在 `tests/test_installer.ps1` 中，使用 Windows PowerShell 5.1，**13 组全部通过**。仅对新建的隔离项目执行，不安装到测试者的用户 Skill 目录。测试证据保留在调用者指定的 ScratchParent 下。
-
-```powershell
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\tests\test_installer.ps1 -ScratchParent 'D:\TestScratch'
+```text
+python scripts/validate_bundle.py
+python tests/test_production.py
+python tests/test_balance.py
+python tests/test_assets.py --scratch-parent <仓库外的现有目录>
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File tests/test_installer.ps1 -ScratchParent <仓库外的现有目录>
 ```
 
-测试目录必须已存在且在仓库外。测试包含默认冲突不改文件、强制更新备份自定义文件、卸载保留其他 Skill、标记保护、坏清单、未知来源目录和目录联接保护。Windows PowerShell 5.1 对普通复制/哈希路径仍有限制；安装器在写入前检查目标长度，备份移动使用经过路径校验的 Windows 长路径形式。
+Windows 安装回归入口实际为 `tests/test_installer.ps1 -ScratchParent <仓库外现有目录>`。GLB 转换助手命令见其 SKILL.md；测试依赖安装在独立临时工作目录，未加入发行包。
 
-## 未执行或未包含
+## 未覆盖/不作承诺
 
-- 未对真实游戏做自动试玩、截图回归或玩家体验测试；遥测/资源工具测试不能替代这些工作。
-- 未执行图像生成服务、Blender/glTF Transform 转换、真实 3D 渲染或解码性能测试。
-- 未执行 macOS/Linux 安装测试、网络共享路径测试、付费服务调用或云部署。
-- 未注入文件复制/移动中途故障，未测试并发文件系统竞争；错误恢复不能替代独立备份。
-- 不以语法校验宣称所有 Phaser API 示例已在真实游戏中运行。
-- 没有为旧版材料完成独立版权审计；许可限制见 NOTICE。
+- 未启动真实 Phaser/Three/Unity/Godot 项目、未验证骨骼/重定向、复杂 PBR 或 3D 运行态解码。原创 Canvas 样例不能替代这些测试。
+- 未运行 resize 纹理变换、KTX 转码、ComfyUI、Blender、Spine、云生成或付费服务；未获取模型权重。没有宣称自动产生商业美术。
+- 音频检查与浏览器调度状态不等于实际听检。本次未验证扬声器输出、混音质量或循环可听接缝；未做手机、手柄与完整无障碍矩阵。
+- 未测 macOS/Linux 安装、网络共享路径、并发文件竞争或复制/移动中途故障注入。未完成历史材料独立版权审计。
+- 新专家是独立编写的工作流程。未进行独立代理前向评估，不以结构检查代替真实项目中的技能表现评估。
